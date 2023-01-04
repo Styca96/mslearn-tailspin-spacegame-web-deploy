@@ -86,5 +86,5 @@ stages:
             inputs:
               azureSubscription: 'Resource Manager - Tailspin - Space Game'
               appName: '$(WebAppName)'
-              appType: 'webApp'
+              appType: 'webAppLinux'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
