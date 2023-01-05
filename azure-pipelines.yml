@@ -20,7 +20,7 @@ stages:
   - job: 'Build'
     displayName: 'Build job'
     pool:
-      vmImage: 'ubuntu-20.04'
+      name: 'local'
       demands:
       - npm
 
@@ -86,7 +86,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      vmImage: 'ubuntu-20.04'
+      name: 'local'
     environment: dev
     variables:
     - group: Release
@@ -111,7 +111,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      vmImage: 'ubuntu-20.04'
+      name: 'local'
     environment: test
     variables:
     - group: 'Release'
@@ -135,7 +135,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      vmImage: 'ubuntu-20.04'
+      name: 'local'
     environment: staging
     variables:
     - group: 'Release'
